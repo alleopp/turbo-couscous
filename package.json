@@ -1,1 +1,22 @@
-
+{
+  "name": "turbo-couscous",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alleopp/turbo-couscous.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alleopp/turbo-couscous/issues"
+  },
+  "homepage": "https://github.com/alleopp/turbo-couscous#readme",
+  "dependencies": {
+    "cypress": "^9.1.1"
+  }
+}
