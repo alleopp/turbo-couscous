@@ -18,8 +18,7 @@ jobs:
 
       - name: Cypress install
         uses: cypress-io/github-action@v2
-        with:
-          with: npm install
+        with: npm install
           
 #      - name: Save build folder
 #        uses: actions/upload-artifact@v2
