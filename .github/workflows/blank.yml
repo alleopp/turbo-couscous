@@ -20,10 +20,8 @@ jobs:
         uses: cypress-io/github-action@v2
         with:
           runTests: false
-          
-      - run: |
-          npm install
-          npm run build
+          with: |
+            npm install
           
       - name: Save build folder
         uses: actions/upload-artifact@v2
