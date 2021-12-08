@@ -1,4 +1,4 @@
-#Cypress testing workflow 
+#Cypress testing workflow
 
 name: Cypress Testing
 
@@ -8,20 +8,16 @@ on:
   push
 
 jobs:
-
-  install:
-      runs-on: ubuntu-latest
-      steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        
-
-      - name: Cypress install
-        uses: cypress-io/github-action@v2
-          
-#      - name: Save build folder
-#        uses: actions/upload-artifact@v2
-#        with:
-#          name: build
-#          if-no-files-found: error
-#          path: build
+  install-front:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Checkout
+          uses: actions/checkout@v2
+        - name: Node10
+          uses: actions/setup-node@v2
+          with:
+            node-version: '10'
+        - run: cd frontend/
+        - run: npm i @vue/cli-service
+        - run: npm install
+        - run: npm run serve & wait-on http://localhost:8080
