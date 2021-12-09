@@ -22,7 +22,7 @@ jobs:
           with:
             python-version: '3.7'
             cache: 'pip3'
-          run: |
+        -  run: |
             pwd
             ls -a
         - name: Node10
