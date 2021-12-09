@@ -23,7 +23,7 @@ jobs:
             python-version: '3.7'
         -  run: |
             pip3.7 install -r requirements.txt
-            find . | sed -e "s/[^-][^\/]*\// |/g" -e "s/|\([^ ]\)/|-\1/"
+            pip3.7 list -v 
             sed 's/from werkzeug import cached_property/from werkzeug.utils import cached_property/' /usr/local/lib/python3.7/site-packages/flask_restplus/fields.py
             sed 's/from werkzeug import cached_property/from werkzeug.utils import cached_property/' /usr/local/lib/python3.7/site-packages/flask_restplus/api.py 
             cat /usr/local/lib/python3.7/site-packages/flask_restplus/fields.py
