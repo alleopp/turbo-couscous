@@ -26,11 +26,11 @@ jobs:
             pip3.7 install -r requirements.txt
             sed 's/from werkzeug import cached_property/from werkzeug.utils import cached_property/' /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/flask_restplus/fields.py
             sed 's/from werkzeug import cached_property/from werkzeug.utils import cached_property/' /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/flask_restplus/api.py
-        - name: Node10
+        - name: Node install
           uses: actions/setup-node@v2
           with:
             node-version: '11'
-#        - run: npm install
+        - run: npm install
 #        - name: install deps
 #          run: |
 #            npm install -g lambdatest-cypress-cli
