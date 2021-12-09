@@ -33,6 +33,6 @@ jobs:
         - name: install deps
           run: |
             npm install
-            npm install -g lamdatest-cypress-cli
+            npm install -g lambdatest-cypress-cli
         - name: Lambda-cypress run
           run: lambdatest-cypress run
