@@ -15,6 +15,7 @@ jobs:
           uses: actions/checkout@v2
         - name: Start postgress
           run: |
+            sudo systemctl start postgresql.service
             sudo -i psql CREATE DATABASE tourit_db
             pg_isready
         - name: Node10
