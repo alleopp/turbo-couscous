@@ -35,5 +35,6 @@ jobs:
             npm install
             npm install -g lambdatest-cypress-cli
             pwd
+            ls -all
         - name: Lambda-cypress run
           run: lambdatest-cypress run
