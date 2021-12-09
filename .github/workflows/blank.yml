@@ -16,8 +16,7 @@ jobs:
         - name: Start postgress
           run: |
             sudo systemctl start postgresql.service
-            sudo -u postgres psql CREATE DATABASE tourit_db
-            pg_isready
+            sudo -u postgres createdb tourit_db
         - name: Node10
           uses: actions/setup-node@v2
           with:
