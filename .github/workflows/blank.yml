@@ -23,9 +23,8 @@ jobs:
             python-version: '3.7'
         -  run: |
             pip3.7 install -r requirements.txt
-            pip3.7 list -v 
-            sed 's/from werkzeug import cached_property/from werkzeug.utils import cached_property/' /usr/local/lib/python3.7/site-packages/flask_restplus/fields.py
-            sed 's/from werkzeug import cached_property/from werkzeug.utils import cached_property/' /usr/local/lib/python3.7/site-packages/flask_restplus/api.py 
+            sed 's/from werkzeug import cached_property/from werkzeug.utils import cached_property/' /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/flask_restplus/fields.py
+            sed 's/from werkzeug import cached_property/from werkzeug.utils import cached_property/' /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/flask_restplus/api.py 
             cat /usr/local/lib/python3.7/site-packages/flask_restplus/fields.py
         - name: Node10
           uses: actions/setup-node@v2
