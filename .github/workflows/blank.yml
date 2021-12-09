@@ -16,6 +16,7 @@ jobs:
         - name: Start postgress
           run: |
             sudo systemctl start postgresql.service
+            sudo -u postgres psql --command="CREATE USER postgres PASSWORD '123'
             sudo -i psql CREATE DATABASE tourit_db
             pg_isready
         - name: Node10
