@@ -17,11 +17,12 @@ jobs:
           run: |
             sudo systemctl start postgresql.service
             sudo -u postgres createdb tourit_db
-        - name: Python install
+        - name: Python 3.7 install
           uses: actions/setup-python@v2
           with:
             python-version: '3.7'
-        -  run: |
+        - name: Dependencies install and mod
+          run: |
             pip3.7 install -r requirements.txt
             sed 's/from werkzeug import cached_property/from werkzeug.utils import cached_property/' /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/flask_restplus/fields.py
             sed 's/from werkzeug import cached_property/from werkzeug.utils import cached_property/' /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/flask_restplus/api.py
@@ -29,6 +30,5 @@ jobs:
           uses: actions/setup-node@v2
           with:
             node-version: '10'
-        - run: npm i @vue/cli-service
-        - run: npm install
-        - run: npm run serve & wait-on http://localhost:8080
+        - name: Cypress run
+          uses: cypress-io/github-action@v2
