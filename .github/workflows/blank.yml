@@ -29,8 +29,7 @@ jobs:
         - name: Node10
           uses: actions/setup-node@v2
           with:
-            node-version: '10'
-            cache: 'npm'
+            node-version: '11'
         - run: npm install
         - name: install deps
           run: |
