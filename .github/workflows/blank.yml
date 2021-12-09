@@ -13,7 +13,7 @@ jobs:
     steps:
         - name: Checkout
           uses: actions/checkout@v2
-        - name: Start postgress
+        - name: Start postgress create table
           run: |
             sudo systemctl start postgresql.service
             sudo -u postgres createdb tourit_db
@@ -21,7 +21,7 @@ jobs:
           uses: actions/setup-python@v2
           with:
             python-version: '3.7'
-        - name: Dependencies install and mod
+        - name: Dependencies install and mod fields.py and api.py
           run: |
             pip3.7 install -r requirements.txt
             sed 's/from werkzeug import cached_property/from werkzeug.utils import cached_property/' /opt/hostedtoolcache/Python/3.7.12/x64/lib/python3.7/site-packages/flask_restplus/fields.py
@@ -30,13 +30,13 @@ jobs:
           uses: actions/setup-node@v2
           with:
             node-version: '11'
-        - run: npm install
-        - name: install deps
-          run: |
-            npm install -g lambdatest-cypress-cli
-            pwd
-            ls -all
+#        - run: npm install
+#        - name: install deps
+#          run: |
+#            npm install -g lambdatest-cypress-cli
+#            pwd
+#            ls -all
         - name: Chrome
           run: npx cypress run --record --key aa959593-08f0-43ed-8a2a-e7cc1604f24e
-        - name: Lambda-cypress run
-          run: lambdatest-cypress run
+#        - name: Lambda-cypress run
+#          run: lambdatest-cypress run
