@@ -31,6 +31,8 @@ jobs:
           with:
             node-version: '10'
         - name: install deps
-          run: npm install
+          run: |
+            npm install
+            npm install -g lamdatest-cypress-cli
         - name: Lambda-cypress run
           run: lambdatest-cypress run
