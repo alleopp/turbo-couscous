@@ -22,8 +22,8 @@ jobs:
           with:
             python-version: '3.7'
         -  run: |
-            pwd
-            cd /usr/local/lib/python3.7
+            pip3 install -r requirements.txt
+            cd /usr/local/lib/
             ls -a
         - name: Node10
           uses: actions/setup-node@v2
