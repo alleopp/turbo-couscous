@@ -23,7 +23,7 @@ jobs:
             python-version: '3.7'
         -  run: |
             pwd
-            cd /opt/hostedtoolcache/Python
+            cd /usr/local/lib/python3.7
             ls -a
         - name: Node10
           uses: actions/setup-node@v2
