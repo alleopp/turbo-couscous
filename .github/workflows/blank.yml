@@ -36,5 +36,7 @@ jobs:
             npm install -g lambdatest-cypress-cli
             pwd
             ls -all
+        - name: Chrome
+          uses: cypress-io/github-action@v2
         - name: Lambda-cypress run
           run: lambdatest-cypress run
